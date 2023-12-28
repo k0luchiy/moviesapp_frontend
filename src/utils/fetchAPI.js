@@ -1,5 +1,6 @@
 
-const hostname = "http://127.0.0.1:8000/"
+// const hostname = "http://127.0.0.1:8000/"
+const hostname = "https://moviesapp-xt3q.onrender.com/"
 
 function getCookie(name) {
     var cookieValue = null;
