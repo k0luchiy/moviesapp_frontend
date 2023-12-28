@@ -31,19 +31,25 @@ class FolderPage extends React.Component{
     }
 
     async fetchFolderMovies(){
+        console.log("Start Fetch folder")
         let folder_id = this.props.params.folder_id
         await fetchAPI(`folders/${folder_id}/`, {method:"GET"})
             .then(response => response.json())
             .then(data => { this.setState(data)})
+        console.log("Fetch folder")
+        console.log(this.state)
     }
 
     async fetchMovies(){
+        console.log("Start Fetch Movies")
         let movies_id = this.state.movies_id
         movies_id.forEach(async (movie_id) => {
             await fetchAPI(`movies/${movie_id}/`, { method: "GET" })
                 .then(response => response.json())
                 .then(movie => { this.setState({movies: [...this.state.movies, movie] })})
         })
+        console.log("Fetch Movies")
+        console.log(this.state)
     }
 
     async componentDidMount(){
